@@ -1,14 +1,17 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+ //https://pris.ly/d/migrate-no-direct-ddl
+ //https://pris.ly/d/migrate-resolve
+
 generator client {
   provider = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
 }
 datasource db {
   provider = "mysql"
-  url = env("DATABASE_URL")
-  shadowDatabaseUrl    = env("SHADOW_DATABASE_URL")
+  //url = env("DATABASE_URL")
+  url    = env("SHADOW_DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
